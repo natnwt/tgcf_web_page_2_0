@@ -15,19 +15,36 @@ else{
 }
 })
 
-const bgImage = document.querySelector(".bg_header_pic");
-// const bgButterflyes = document.querySelector(".butterflyes_header_pic");
+// Pobieramy element obrazka
+const bgImage = document.querySelector(".bg-header-pic");
 
+// Sprawdzamy i ustawiamy obrazek zależnie od szerokości ekranu
 function updateBgImage() {
-  if (window.innerWidth <= 600) {
-    bgImage.src = "./images/background_pic_header_mobile.png";
-  } else {
-    bgImage.src = "./images/background_pic_header.png";
+  if (!bgImage) {
+    console.warn("Nie znaleziono elementu .bg-header-pic");
+    return;
+  }
+
+  const desktopSrc = "/background_pic_header.png";
+  const mobileSrc = "/background_pic_header_mobile.png";
+  const selectedSrc = window.innerWidth <= 600 ? mobileSrc : desktopSrc;
+
+  // Ustawiamy tylko jeśli src się zmienia
+  if (!bgImage.src.endsWith(selectedSrc)) {
+    bgImage.src = selectedSrc;
+
+    // Dodajemy fallback w razie błędu ładowania
+    bgImage.onerror = () => {
+      console.error("Nie udało się załadować obrazka:", selectedSrc);
+      bgImage.src = desktopSrc;
+    };
   }
 }
 
-window.addEventListener("resize", updateBgImage);
+// Uruchamiamy przy załadowaniu strony i zmianie rozmiaru
 window.addEventListener("load", updateBgImage);
+window.addEventListener("resize", updateBgImage);
+
 
 
 const btnDescribe = document.getElementById("btnDescribe");
