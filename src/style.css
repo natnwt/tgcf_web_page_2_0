@@ -107,11 +107,14 @@ main{
   right: 10%;
   z-index: 5;
   text-wrap: wrap;
-  width: min(300px, 50vw);
+  width: min(400px, 90vw);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  color: black;
 }
 .quote>*{
   quotes: "„" "“";
-  font-size: min(3rem, 3vw);
+  font-size: min(2.5rem, 6vw);
   line-height: 2.5rem;
 }
 @keyframes parallax {
@@ -119,10 +122,9 @@ main{
     transform: translateY(calc(100px * var(--parallax-speed)));
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .quote{
-    top: 10%;
-    left: 10%;
+   display: none;
   }
   .butterflyes_header_pic{
     position: absolute;

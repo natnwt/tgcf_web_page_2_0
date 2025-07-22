@@ -15,19 +15,19 @@ else{
 }
 })
 
-// const bgImage = document.querySelector(".bg_header_pic");
-// // const bgButterflyes = document.querySelector(".butterflyes_header_pic");
+const bgImage = document.querySelector(".bg_header_pic");
+// const bgButterflyes = document.querySelector(".butterflyes_header_pic");
 
-// function updateBgImage() {
-//   if (window.innerWidth <= 400) {
-//     bgImage.src = "./images/background_pic_header_mobile.jpg";
-//   } else {
-//     bgImage.src = "./images/background_pic_header.jpg";
-//   }
-// }
+function updateBgImage() {
+  if (window.innerWidth <= 600) {
+    bgImage.src = "./images/background_pic_header_mobile.png";
+  } else {
+    bgImage.src = "./images/background_pic_header.png";
+  }
+}
 
-// window.addEventListener("resize", updateBgImage);
-// window.addEventListener("load", updateBgImage);
+window.addEventListener("resize", updateBgImage);
+window.addEventListener("load", updateBgImage);
 
 
 const btnDescribe = document.getElementById("btnDescribe");
