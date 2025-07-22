@@ -492,11 +492,12 @@ transition: scale 0.2s linear;
     .side_characters_img img:nth-child(6n - 1) { 
       grid-column: 2 / span 2;
     }
-
+   
     @media (max-width: 500px){
       .side_characters_img{
         grid-template-columns: repeat(3, var(--size)); 
         grid-template-rows: repeat(9, var(--size));
+        place-items: center start;
       }
       .side_characters_img img:nth-child(2n - 1) { 
       grid-column: 2 / span 2;
@@ -507,6 +508,7 @@ transition: scale 0.2s linear;
           background: var(--clr-dark);
           overflow-x: auto;
           overflow-y: hidden;
+          
 
           & h1{
             color: var(--clr-main);
