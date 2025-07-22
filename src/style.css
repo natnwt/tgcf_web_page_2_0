@@ -78,7 +78,7 @@ main{
   position: relative;
   z-index: 0;
 
-  background-image: url(./images/background_pic_header.png);
+  background-image: url(../images/background_pic_header.png);
   background-size: cover;
   background-position: center;
   max-width: 100vw;
@@ -89,7 +89,7 @@ main{
 }
 @media (max-width: 600px){
 .parallax{
-  background-image: url(./images/background_pic_header_mobile.png);
+  background-image: url(../images/background_pic_header_mobile.png);
   min-height: 100dvh;
 }
 }
