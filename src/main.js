@@ -1,4 +1,5 @@
 import './style.css'
+
 const navBtn= document.querySelector(".nav_button");
 const navBar=document.querySelector(".header_nav_box");
 
@@ -15,35 +16,35 @@ else{
 }
 })
 
-// Pobieramy element obrazka
-const bgImage = document.querySelector(".bg-header-pic");
+// // Pobieramy element obrazka
+// const bgImage = document.querySelector(".bg-header-pic");
 
-// Sprawdzamy i ustawiamy obrazek zależnie od szerokości ekranu
-function updateBgImage() {
-  if (!bgImage) {
-    console.warn("Nie znaleziono elementu .bg-header-pic");
-    return;
-  }
+// // Sprawdzamy i ustawiamy obrazek zależnie od szerokości ekranu
+// function updateBgImage() {
+//   if (!bgImage) {
+//     console.warn("Nie znaleziono elementu .bg-header-pic");
+//     return;
+//   }
 
-  const desktopSrc = "/background_pic_header.png";
-  const mobileSrc = "/background_pic_header_mobile.png";
-  const selectedSrc = window.innerWidth <= 600 ? mobileSrc : desktopSrc;
+//   const desktopSrc = "/background_pic_header.png";
+//   const mobileSrc = "/background_pic_header_mobile.png";
+//   const selectedSrc = window.innerWidth <= 600 ? mobileSrc : desktopSrc;
 
-  // Ustawiamy tylko jeśli src się zmienia
-  if (!bgImage.src.endsWith(selectedSrc)) {
-    bgImage.src = selectedSrc;
+//   // Ustawiamy tylko jeśli src się zmienia
+//   if (!bgImage.src.endsWith(selectedSrc)) {
+//     bgImage.src = selectedSrc;
 
-    // Dodajemy fallback w razie błędu ładowania
-    bgImage.onerror = () => {
-      console.error("Nie udało się załadować obrazka:", selectedSrc);
-      bgImage.src = desktopSrc;
-    };
-  }
-}
+//     // Dodajemy fallback w razie błędu ładowania
+//     bgImage.onerror = () => {
+//       console.error("Nie udało się załadować obrazka:", selectedSrc);
+//       bgImage.src = desktopSrc;
+//     };
+//   }
+// }
 
-// Uruchamiamy przy załadowaniu strony i zmianie rozmiaru
-window.addEventListener("load", updateBgImage);
-window.addEventListener("resize", updateBgImage);
+// // Uruchamiamy przy załadowaniu strony i zmianie rozmiaru
+// window.addEventListener("load", updateBgImage);
+// window.addEventListener("resize", updateBgImage);
 
 
 
