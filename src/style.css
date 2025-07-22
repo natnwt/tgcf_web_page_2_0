@@ -43,7 +43,7 @@ html{
 }
 body{
   font-family: var(--ff-basic);
-  background: linear-gradient(to bottom, transparent,transparent, transparent, var(--clr-main));
+  
 }
 img{
   width: 100%;
